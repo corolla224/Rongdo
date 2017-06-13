@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
 
 class RunController extends Controller
 {
@@ -40,13 +41,14 @@ class RunController extends Controller
           'fromNumber' => 'required|numeric',
           'frombankName' => 'required|max:100',
           'amount' => 'required|max:100',
-          'date_add' => 'required->date',
-          'time_add' => 'required->time',
+          'dateadd' => 'required|numeric',
+          'timeadd' => 'required|numeric',
           'toBank' => 'required|max:100',
           'toNumber' => 'required|numeric',
           'toNamebank' => 'required|max:100',
 
         ]);
+
     }
 
     /**

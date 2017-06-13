@@ -16,6 +16,16 @@
       {{ Form::open(['url' => 'run']) }}
     @endif
     <div class="panel-body">
+      @if(count($errors) > 0)
+        <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+        </div>
+      </div>
+      @endif
       <div>
         <div class="col-xs-2">
             {{ Form::label('bank', 'วิธีการโอน' ) }}
@@ -68,22 +78,22 @@
       </div>
       <div>
         <div class="col-xs-2">
-            {{ Form::label('date_add', 'วันที่โอน') }}
+            {{ Form::label('dateadd', 'วันที่โอน') }}
         </div>
-        @if(isset($run->date_add))
-          {{ Form::text('date_add',$run->date_add,['class' => 'form-control']) }}
+        @if(isset($run->dateadd))
+          {{ Form::text('dateadd',$run->dateadd,['class' => 'form-control']) }}
         @else
-          {{ Form::text('date_add','',['class' => 'form-control']) }}
+          {{ Form::text('dateadd','',['class' => 'form-control']) }}
         @endif
       </div>
       <div>
         <div class="col-xs-2">
-            {{ Form::label('time_add', 'เวลาโอน') }}
+            {{ Form::label('timeadd', 'เวลาโอน') }}
         </div>
-        @if(isset($run->time_add))
-          {{ Form::text('time_add',$run->time_add,['class' => 'form-control']) }}
+        @if(isset($run->timeadd))
+          {{ Form::text('timeadd',$run->timeadd,['class' => 'form-control']) }}
         @else
-          {{ Form::text('time_add','',['class' => 'form-control']) }}
+          {{ Form::text('timeadd','',['class' => 'form-control']) }}
         @endif
       </div>
       <div>
@@ -116,16 +126,6 @@
           {{ Form::text('toNamebank','',['class' => 'form-control']) }}
         @endif
       </div>
-      <!--<div>
-        <div class="col-xs-2">
-            {{ Form::label('transferStatus', 'ยืนยัน') }}
-        </div>
-        @if(isset($run->transferStatus))
-          {{ Form::text('transferStatus',$run->transferStatus,['class' => 'form-control']) }}
-        @else
-          {{ Form::text('transferStatus','',['class' => 'form-control']) }}
-        @endif
-      </div>-->
       <div>
         <br>
         <div class="col-xs-5">

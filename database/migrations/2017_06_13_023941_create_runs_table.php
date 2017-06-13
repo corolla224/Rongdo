@@ -20,12 +20,11 @@ class CreateRunsTable extends Migration
             $table->integer('fromNumber');
             $table->text('frombankName');
             $table->float('amount', 8, 2);
-            $table->date('date_add');
-            $table->dateTime('time_add');
+            $table->date('dateadd');
+            $table->dateTime('timeadd');
             $table->text('toBank');
             $table->integer('toNumber');
             $table->text('toNamebank');
-            $table->text('transferStatus');
             $table->timestamps();
         });
     }

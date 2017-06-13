@@ -18,6 +18,7 @@ Route::get('/', function () {
 
 Route::get('run', 'RunController@index');
 Route::get('run/create', 'RunController@create');
+Route::post('/run', 'RunController@store');
 
 Auth::routes();
 
